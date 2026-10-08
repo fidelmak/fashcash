@@ -19,6 +19,7 @@ class _JobHomeState extends State<JobHome> {
   void initState() {
     super.initState();
     context.read<JobBloc>().add(GetJobs());
+
   }
 
   @override
@@ -51,7 +52,7 @@ class _JobHomeState extends State<JobHome> {
           }
           if (state is JobLoaded) {
             return ListView.builder(
-              itemCount: state.jobs.jobs?.length ?? 0,
+              itemCount: state.jobs.length ?? 0,
               itemBuilder: (context, index) {
                 return buildJobCard(state, index);
 
@@ -78,7 +79,7 @@ class _JobHomeState extends State<JobHome> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppText(
-            title: state.jobs.jobs![index].title.toString(),
+            title: state.jobs[index].title.toString(),
             weight: FontWeight.bold,
             size: 16.sp,
           ),
@@ -96,7 +97,7 @@ class _JobHomeState extends State<JobHome> {
               Expanded(
                 child: AppText(
                   title:
-                      state.jobs.jobs![index].location?.toString() ??
+                      state.jobs[index].location?.toString() ??
                       "Location not provided",
                   size: 12.sp,
                 ),
@@ -111,7 +112,7 @@ class _JobHomeState extends State<JobHome> {
               Icon(Icons.work_outline, size: 18.sp, color: AppColors.primaryColor),
               SizedBox(width: 5.w),
               AppText(
-                title: state.jobs.jobs![index].remote== true
+                title: state.jobs[index].remote== true
                     ? "Remote"
                     : "On-site",
                 size: 12.sp,
@@ -127,7 +128,7 @@ class _JobHomeState extends State<JobHome> {
               SizedBox(width: 5.w),
               AppText(
                 title:
-                    state.jobs.jobs![index].salary?.toString() ??
+                    state.jobs[index].salary?.toString() ??
                     "Salary not provided",
                 size: 12.sp,
               ),
@@ -136,7 +137,7 @@ class _JobHomeState extends State<JobHome> {
 
               IconButton(
                 onPressed: () async {
-                  final url = state.jobs.jobs![index].applyUrl;
+                  final url = state.jobs[index].applyUrl;
 
                   if (url != null && url.isNotEmpty) {
                     final uri = Uri.parse(url);

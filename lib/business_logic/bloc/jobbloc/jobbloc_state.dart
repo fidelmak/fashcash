@@ -14,7 +14,7 @@ final class JobLoading extends JobblocState {
   List<Object> get props => [];
 }
 final class JobLoaded extends JobblocState {
-  final JobModels jobs;
+  final List<Jobs> jobs;
 
   const JobLoaded({ required this.jobs});
   @override

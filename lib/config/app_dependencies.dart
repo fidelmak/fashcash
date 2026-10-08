@@ -1,6 +1,8 @@
+import 'package:fashcash/data/dataproviders/local_job_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../business_logic/bloc/jobbloc/jobbloc_bloc.dart';
 import '../business_logic/bloc/jokebloc/jokes_bloc.dart';
@@ -11,10 +13,12 @@ import '../data/repository/joke_repository.dart';
 
 class AppDependencies extends StatelessWidget {
   final Widget child;
+  final SharedPreferences preference;
 
  const AppDependencies({
     super.key,
     required this.child,
+   required this.preference
   });
 
   @override
@@ -32,7 +36,7 @@ class AppDependencies extends StatelessWidget {
           create: (_) => JobRepository(
             provider: JobProviders(
               client: http.Client(),
-            ),
+            ), localProvider: LocalJobProvider(preference:preference),
           ),
         ),
 

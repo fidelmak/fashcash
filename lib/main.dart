@@ -11,18 +11,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'business_logic/bloc/jokebloc/jokes_bloc.dart';
 import 'config/app_dependencies.dart';
 import 'data/repository/joke_repository.dart';
 
-void main() {
+void main() async {
   final client = http.Client();
+  final preference = await SharedPreferences.getInstance();
   runApp(
     DevicePreview(
       enabled: kDebugMode,
       builder: (context) {
-        return AppDependencies(child: const MyApp());
+        return AppDependencies(preference: preference,
+        child: const MyApp());
       },
     ),
   );
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
 
-          home: JobHome(),
+          home: LoginScreen(),
         );
       },
     );
