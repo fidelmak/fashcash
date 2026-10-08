@@ -2,8 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 
-import '../../models/onboarding_model.dart';
+import '../../../data/models/onboarding_model.dart';
 import '../../utils/app_colors.dart';
+
 import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
 

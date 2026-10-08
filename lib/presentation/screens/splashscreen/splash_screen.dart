@@ -1,9 +1,9 @@
-import 'package:fashcash/widgets/app_text.dart';
+import 'package:fashcash/presentation/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 
 import '../../utils/app_colors.dart';
-import '../../widgets/app_button.dart';
+
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
