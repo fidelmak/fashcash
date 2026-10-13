@@ -16,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController nameContoller = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
-                      image: AssetImage("images/logo2.png"),
+                      image: AssetImage("assets/images/logo2.png"),
                       fit: BoxFit.contain,
                       height: 50.h,
                       width: 50.w,
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 AppTextInput(name: "Name", controller: nameContoller),
                 AppTextInput(
                   name: "Password",
-                  controller: nameContoller,
+                  controller: passwordController,
                   prefix: Icon(Icons.key),
                   isPassword: true,
                 ),
@@ -77,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 AppButton(title: 'Login', onPressed: () {}),
-                SizedBox(height: 12.h),
+                SizedBox(height: 16.h ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -103,8 +104,36 @@ class _LoginScreenState extends State<LoginScreen> {
                         thickness: 1,
                       ),
                     ),
+
+
+                    
+
                   ],
-                )
+                ),
+                SizedBox(height: 16.h ),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.primaryColor, width: 1.sp,),
+                    borderRadius: BorderRadius.circular(12.sp)
+                  ),
+                    child:Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                        children:[
+                          Image.asset("assets/images/google.png",
+                            width: 30.w, height:30.h,),
+                          AppText(title: "Google"),
+                        ]
+                    )
+                ),
+
+                SizedBox(height: 16.h ),
+                AppText(title: "Don't have an account?"),
+                SizedBox(height: 16.h ),
+                TextButton(
+                    onPressed: (){},
+                    child:AppText(title: "Sign Up ",color: AppColors.primaryColor,))
+
               ],
             ),
           ),

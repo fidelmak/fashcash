@@ -1,17 +1,17 @@
 final List<Map> assetsImages = [
   {
     "title": "Quick and easy",
-    "image":  "images/p1.png",
+    "image":  "assets/images/p1.png",
     "description" :"Just visit any of the growing number of outlets who accept money and make your purchase within second"
   },
   {
     "title": "Investerment Effectives",
-    "image":  "images/p2.png",
+    "image":  "assets/images/p2.png",
     "description" :"We constantly updated currencymarket, exchange rates,..."
   },
   {
     "title": "Security",
-    "image":   "images/p3.png",
+    "image":   "assets/images/p3.png",
     "description" :"Your money is protected by your login"
   },
 
@@ -20,10 +20,6 @@ final List<Map> assetsImages = [
 
 
 class OnboardingItem {
-
-
-
-
 
   final String title;
   final String image;
@@ -39,18 +35,18 @@ class OnboardingItem {
 const List<OnboardingItem> onboardingItems = [
   OnboardingItem(
     title: "Quick and easy",
-    image: "images/p1.png",
+    image: "assets/images/p1.png",
     description:
         "Just visit any of the growing number of outlets who accept money and make your purchase within second",
   ),
   OnboardingItem(
-    title: "Investerment Effectives",
-    image: "images/p2.png",
-    description: "We constantly updated currencymarket, exchange rates,...",
+    title: "Effective Investment",
+    image: "assets/images/p2.png",
+    description: "We constantly updated currency market, exchange rates,...",
   ),
   OnboardingItem(
     title: "Security",
-    image: "images/p3.png",
+    image: "assets/images/p3.png",
     description: "Your money is protected by your login",
   ),
 ];
