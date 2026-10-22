@@ -91,11 +91,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   Checkbox(value: isClicked, onChanged:onChange),
-                  AppText(title: "I Agree to the",),
+                  AppText(title: "I Agree to the",size: 14.sp),
 
-                  AppText(title: "terms",color: AppColors.primaryColor,),
-                  AppText(title: "and",),
-                  AppText(title: "privacy policy.",color: AppColors.primaryColor,),
+                  AppText(title: "terms",color: AppColors.primaryColor,size: 14.sp),
+                  AppText(title: "and",size: 14.sp),
+                  AppText(title: "privacy policy.",color: AppColors.primaryColor,size: 14.sp),
                 ],),
                 SizedBox(height: 16.h ),
 

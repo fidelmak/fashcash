@@ -1,6 +1,10 @@
 import 'package:device_preview_plus/device_preview_plus.dart';
 
 import 'package:fashcash/data/dataproviders/joke_providers.dart';
+import 'package:fashcash/presentation/screens/account/link_account_screen.dart';
+import 'package:fashcash/presentation/screens/auth/change_password_screen.dart';
+import 'package:fashcash/presentation/screens/auth/forget_password_pin.dart';
+import 'package:fashcash/presentation/screens/auth/forget_password_screen.dart';
 import 'package:fashcash/presentation/screens/auth/login_screen.dart';
 import 'package:fashcash/presentation/screens/auth/sign_up_screen.dart';
 import 'package:fashcash/presentation/screens/home/home_screen.dart';
@@ -20,8 +24,12 @@ import 'data/repository/joke_repository.dart';
 
 void main() async {
 
-
-  runApp( const MyApp());
+  runApp(  const MyApp());
+  // runApp(  DevicePreview(
+  //   builder: (context) {
+  //     return const MyApp();
+  //   }
+  // ));
 }
 
 class MyApp extends StatelessWidget {
@@ -31,13 +39,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilPlusInit(
-      designSize: const Size(360, 690),
+     designSize: const Size(360, 690),
+
       minTextAdapt: true,
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
 
-          home: SignUpScreen(),
+          home: LinkAccountScreen(),
         );
       },
     );
