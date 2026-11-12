@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../business_logic/bloc/jobbloc/jobbloc_bloc.dart';
-import '../business_logic/bloc/jokebloc/jokes_bloc.dart';
+
 import '../data/dataproviders/job_providers.dart';
 import '../data/dataproviders/joke_providers.dart';
 import '../data/repository/job_repository.dart';
@@ -47,11 +47,7 @@ class AppDependencies extends StatelessWidget {
       ],
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) => JokesBloc(
-              repository: context.read<JokeRepository>(),
-            ),
-          ),
+
           BlocProvider(
             create: (context) => JobBloc(
               repository: context.read<JobRepository>(),
